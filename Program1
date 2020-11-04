@@ -1,0 +1,18 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        double firstvariable = 20.00;
+        double secondvariable = 80.00;
+        double total = (firstvariable+secondvariable) * 100.00;
+        double reminder = total % 40.00;
+        boolean isreminder_value = (reminder == 0) ? true : false;
+
+            System.out.println("output of the solution" + isreminder_value);
+
+
+        }
+    }
+
