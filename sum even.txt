@@ -1,0 +1,55 @@
+public class Dayofweek {
+    public static void main(String[] args) {
+        System.out.println("even number" + isEvennumber(2));
+        int count = 0;
+        int number= 4;
+        int finishnumber = 20;
+
+        while(number <= finishnumber){
+            number ++;
+            if (!isEvennumber(number)) {
+                continue;
+            }
+            System.out.println("evem number" + number);
+
+            count ++;
+            if(count>=5){
+                break;
+            }
+
+            
+
+            }
+        System.out.println("total number " + count);
+        }
+
+
+
+
+    public static boolean isEvennumber(int number){
+
+        if(number % 2 != 0 ){
+            System.out.println("invalid");
+            return false;
+        }
+        return true;
+    }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+

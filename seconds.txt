@@ -1,0 +1,36 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println( getdurationstring(65,54));
+        System.out.println(getdurationstring(3945) );
+
+    }
+    public static String getdurationstring(long minutes, long seconds) {
+        if((minutes<0)||(seconds<0 )|| (seconds>59)){
+            return "invalid value";
+        }
+        long hours = minutes / 60;
+        long remaing = minutes % 60;
+        return hours + "j" +remaing + "m" + seconds + "s";
+
+    }
+    public static String getdurationstring(long seconds){
+        if(seconds<0){
+            return "invalid value";
+        }
+        long minutes  = seconds / 60;
+        long remaini = seconds%60;
+        String x = getdurationstring(minutes,remaini);
+        return x;
+
+
+    }
+    }
+
+
+
+
+
+

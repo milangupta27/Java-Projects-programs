@@ -1,0 +1,41 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        calcfeetinchestocm(7,5);
+        calcfeetinchestocm(100);
+    }
+    public static double calcfeetinchestocm(double f, double s){
+
+        if((f < 0) || (s<0 && s> 12)) {
+            return -1;
+        }else {
+
+            double cm = (f*12)*2.54;
+            cm += s*2.54;
+
+            System.out.println("the value of feets inches" + cm);
+            return cm;
+
+        }
+
+    }
+    public static double calcfeetinchestocm(double s){
+        if (s<0){
+            return -1;
+        }double feet = (int) s / 12;
+        double remaniinches = (int) s% 12;
+        System.out.println( feet +"L" + remaniinches);
+        return calcfeetinchestocm(feet,remaniinches);
+    }
+
+
+
+
+    }
+
+
+
+
