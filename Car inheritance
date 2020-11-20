@@ -1,0 +1,98 @@
+public class Vechile {
+    private String name;
+    private String size;
+    private int CV;
+    private int CD;
+
+    public Vechile(String name, String size) {
+        this.name = name;
+        this.size = size;
+    }
+
+    public void steer(int dierction){
+        this.CD+=dierction;
+        System.out.println("Vechile sterr" + CD + "0");
+    }
+
+
+    public void move(int V, int D){
+        this.CV = V;
+        this.CD = D;
+        System.out.println("V" + CV + "D" + CD);
+
+
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public int getCV() {
+        return CV;
+    }
+
+    public int getCD() {
+        return CD;
+    }
+    public void stop(){
+        this.CV=0;
+    }
+}
+public class Car extends Vechile {
+    private int wheels;
+    private int doors;
+    private  int gears;;
+    private boolean isManual;
+
+    private int currentgear;
+
+    public Car(String name, String size, int wheels, int doors, int gears, boolean isManual) {
+        super(name, size);
+        this.wheels = wheels;
+        this.doors = doors;
+        this.gears = gears;
+        this.isManual = isManual;
+        this.currentgear = 1;
+    }
+    public void setCurrentgear(int currentgear){
+        this.currentgear=currentgear;
+        System.out.println("Car.set" + this.currentgear);
+    }
+    public void changeV(int S,int D){
+        move(S,D);
+        System.out.println("car changeV" + S + " Dir" + D);
+
+    }
+}
+public class outlander extends Car{
+    private int roadservice;
+
+    public outlander( int roadservice) {
+        super("outlander", "4Wd", 5,5,6, false);
+        this.roadservice = roadservice;
+    }
+    public void accelarat(int rate) {
+        int newV = getCV() + rate;
+        if (newV == 0) {
+            stop();
+            setCurrentgear(1);
+
+        } else if (newV > 0 && newV <= 10) {
+            setCurrentgear(1);
+        } else if (newV > 10 && newV <= 20) {
+            setCurrentgear(2);
+        } else if (newV > 20 && newV <= 30) {
+            setCurrentgear(3);
+        }else {
+            setCurrentgear(4);
+        }
+        if (newV > 0){
+            changeV(newV,getCD());
+        }
+    }
+}
